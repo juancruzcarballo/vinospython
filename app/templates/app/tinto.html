@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Tintos
+{% endblock titulo %}
+    
+{% block cabecera %}
+    Listado de vinos tintos
+{% endblock cabecera %}
+    
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for curso in db %}
+    <tr>
+        <td>{{ curso.id }}</td>
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.precio }}</td>
+    </tr>
+    {% endfor %}
+
+
+ </tbody>
+</table>
+
+{% endblock contenido %}
+
+
+
+

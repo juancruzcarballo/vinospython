@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Clientes
+{% endblock titulo %}
+    
+{% block cabecera %}
+    Listado de clientes
+{% endblock cabecera %}
+    
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for curso in db %}
+    <tr>
+        <td>{{ curso.id }}</td>
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.apellido }}</td>
+        <td>{{ curso.email }}</td>
+        <td>{{ curso.telefono }}</td>
+    </tr>
+    {% endfor %}
+
+
+ </tbody>
+</table>
+
+{% endblock contenido %}
+
