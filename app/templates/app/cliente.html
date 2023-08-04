@@ -12,6 +12,14 @@
     
 
 {% block contenido %}
+
+
+<form action="/app/buscar" method="get">
+    {% csrf_token %}
+    <input type="text" name="nombre" id="nombre">
+    <input type="submit" value="Buscar">
+</form>
+
 <table class="table">
     <thead>
         <tr>

@@ -1,0 +1,3 @@
+Se crea una plataforma ecommerce , venta de vinos, podemos ver en el menú las opciones de tintos, blancos y clientes, al ingresar a 
+cada uno veremos el listado de productos de acuerdo al que corresponda, cada uno cuenta con su filtro de búsqueda para filtrar un
+producto, mediante precio y cliente por nombre. En los formularios form_blanco, form_tinto, form_cliente realizamos el ingreso de los datos.

@@ -65,8 +65,35 @@ def buscar2(request):
         precio = request.GET['precio']
         cursos = Tinto.objects.filter(precio__icontains=precio)
         return render(request,
-                      "app/resultadosIpa.html",
+                      "app/resultadosTinto.html",
                      {"precio":precio, "db":cursos})
+    
+    return HttpResponse("No se ingresaron datos para la búsqueda")
+
+def buscarBlanco(request):
+    return render(request, "app/blanco.html")
+
+def buscar3(request):
+    if request.GET['precio']:
+        precio = request.GET['precio']
+        cursos = Blancos.objects.filter(precio__icontains=precio)
+        return render(request,
+                      "app/resultadosBlancos.html",
+                     {"precio":precio, "db":cursos})
+    
+    return HttpResponse("No se ingresaron datos para la búsqueda")
+
+
+def buscarCliente(request):
+    return render(request, "app/cliente.html")
+
+def buscar(request):
+    if request.GET['nombre']:
+        nombre = request.GET['nombre']
+        cursos = Cliente.objects.filter(nombre__icontains=nombre)
+        return render(request,
+                      "app/resultadosClientes.html",
+                     {"precio":nombre, "db":cursos})
     
     return HttpResponse("No se ingresaron datos para la búsqueda")
 
@@ -77,7 +104,7 @@ def formBlanco(request):
         return HttpResponse("Se grabó con exito")
     
 
-    return render(request, "app/rubiaForm.html")
+    return render(request, "app/blancoForm.html")
 
 def formBlanco2(request):
      if request.method == "POST":
